@@ -12,17 +12,27 @@ export default function LaunchFee() {
   });
 
   if (isLoading) {
-    return <p>Loading launch fee...</p>;
+    return (
+      <div className="launch-fee-card">
+        <span className="eyebrow">LAUNCH FEE</span>
+        <p>Loading fee...</p>
+      </div>
+    );
   }
 
   if (isError) {
-    return <p>Failed to read launch fee.</p>;
+    return (
+      <div className="launch-fee-card launch-fee-error">
+        <span className="eyebrow">LAUNCH FEE</span>
+        <p>Unable to read fee</p>
+      </div>
+    );
   }
 
   return (
-    <div>
-      <h2>Launch Fee</h2>
-      <p>{data?.toString()} wei</p>
+    <div className="launch-fee-card">
+      <span className="eyebrow">LAUNCH FEE</span>
+      <p className="launch-fee-value">{data?.toString() ?? '—'} <span>wei</span></p>
     </div>
   );
 }
