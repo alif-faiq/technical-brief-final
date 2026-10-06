@@ -1,5 +1,12 @@
 # React + TypeScript + Vite
 
+## Deploying to GitHub Pages
+
+The GitHub Actions workflow builds the site with `npm ci` and `npm run build`,
+then deploys the generated `dist/` directory. In the repository settings, open
+**Settings > Pages** and set **Build and deployment > Source** to **GitHub Actions**.
+The Vite base path is `/technical-brief-final/` for this repository's project page.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
